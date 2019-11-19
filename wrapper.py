@@ -2,8 +2,9 @@
 
 import sys #For getting the values from command line 
 from CSP import csp
-from Backtrack import *
-import time 
+#from Backtrack import *
+import time
+from MRVDH6 import *
 
 #THE MAIN FUNCTION GOES HERE
 if __name__ == "__main__":
@@ -13,7 +14,7 @@ if __name__ == "__main__":
     Argument 2 - Input String Showing the Sudoku 
     '''
     array = []  
-    with open("sudokus_start.txt", "r") as ins:
+    with open("data\sudokus_start2.txt", "r") as ins:
         for line in ins:
             array.append(line)
 
@@ -27,7 +28,7 @@ if __name__ == "__main__":
         startpuzle = time.time()
         boardno =  boardno + 1
         sudoku = csp(grid=grid)
-        solved  = Backtracking_Search(sudoku) 
+        solved  = BacktrackingMRVDH_Search(sudoku) 
         print ("The board-", boardno, " takes ", time.time() - startpuzle, " seconds")
         if solved!="FAILURE": 
             f.write(write(solved)+"\n")
