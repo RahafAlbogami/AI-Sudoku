@@ -8,7 +8,8 @@ class csp:
 	def __init__ (self, domain = digits, grid = ""):
 		self.variables = squares
 		self.domain = self.getDict(grid)
-		self.values = self.getDict(grid)		
+		self.values = self.getDict(grid)
+		self.VARconstraints = []
 
 
 		'''
@@ -24,11 +25,9 @@ class csp:
 
 		self.units = dict((s, [u for u in self.unitlist if s in u]) for s in squares)
 		self.peers = dict((s, set(sum(self.units[s],[]))-set([s])) for s in squares)
-		self.constraints = {(variable, peer) for variable in self.variables for peer in self.peers[variable]}
-
-
-
-
+		self.constraints = list({(variable, peer) for variable in self.variables for peer in self.peers[variable]})
+		#self.constraints2 = list({(variable, peer) for variable in self.variables for peer in self.peers[variable]})
+                        
 	#GETTING THE STRING AS INPUT AND RETURNING THE CORRESPONDING DICTIONARY
 	def getDict(self, grid=""):
 		i = 0
