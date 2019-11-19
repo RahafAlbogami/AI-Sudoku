@@ -14,7 +14,7 @@ if __name__ == "__main__":
     Argument 2 - Input String Showing the Sudoku 
     '''
     array = []  
-    with open("sudokus_start.txt", "r") as ins:
+    with open("data\sudokus_start2.txt", "r") as ins:
         for line in ins:
             array.append(line)
 
@@ -29,9 +29,6 @@ if __name__ == "__main__":
         solved  = AC3(sudoku) 
         boardno = boardno + 1 
         if isComplete(sudoku) and solved: 
-            print (boardno)
-            print ("Before solving: ", grid)
-            print ("After solving: ", write(sudoku.values))
             print ("Running time: ", time.time()-prev, "\n")
             i = i + 1
     
