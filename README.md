@@ -22,9 +22,17 @@ CSP : Defines the CSP class
 
 AC3 : Implementation of AC3
 
-Backtrack : Implementation of Backtracking + MRV + FC
-
 helper : Consists of a couple of helper functions used across the problems
+
+## UPDATE ##
+
+Backtrack : Implementation of Backtracking 
+
+MRVDH6: Implementation of Backtracking With Minimum Remaining Values (MRV) and Degree Heuristic (DH) 
+
+
+
+
 
 
 
