@@ -3,6 +3,8 @@
 from CSP import *
 from copy import deepcopy
 
+index = 0
+
 #BACKTRACKING SEARCH INITIALIZES THE INITIAL ASSIGNMENT AND CALLS THE BACKTRACK FUNCTION
 def Backtracking_Search(csp):
 	return Backtrack({}, csp)
@@ -58,12 +60,10 @@ def isComplete(assignment):
 	return set(assignment.keys())==set(squares)
 
 
-
 #SELECTS THE NEXT VARIABLE TO BE ASSIGNED USING MRV
 def Select_Unassigned_Variables(assignment, csp):
 	unassigned_variables = dict((squares, len(csp.values[squares])) for squares in csp.values if squares not in assignment.keys())
-	mrv = min(unassigned_variables, key=unassigned_variables.get)
-	return mrv
+	return list(unassigned_variables.keys())[0]
 
 
 
